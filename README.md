@@ -18,6 +18,11 @@ Environment:
 - Copy `.env.example` to `.env` and set real values.
 - `DJANGO_SECRET_KEY` and `DB_PASSWORD` must be set in `.env`.
 
+Docs:
+
+- Local ops runbook: `docs/local_ops.md`
+- Transactions and migrations: `docs/transactions_migrations.md`
+
 PostgreSQL (local) setup:
 
 1) Install PostgreSQL 16 and ensure service `postgresql-x64-16` is running.
