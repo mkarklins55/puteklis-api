@@ -1,0 +1,13 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+  <h1>Sinhronizēt visas dziesmas</h1>
+  <p>Šī darbība pārrakstīs <code>songs.json</code> un pārkopēs visus failus no Django uz puteklis.com mapēm.</p>
+  <form method="post">
+    {% csrf_token %}
+    <div class="submit-row">
+      <input type="submit" value="Jā, sinhronizēt visas" class="default">
+      <a href="{% url 'admin:music_song_changelist' %}" class="button">Atcelt</a>
+    </div>
+  </form>
+{% endblock %}
