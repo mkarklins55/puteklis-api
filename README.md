@@ -1,5 +1,7 @@
 # puteklis-api
 
+[![CI](https://github.com/mkarklins55/puteklis-api/actions/workflows/ci.yml/badge.svg)](https://github.com/mkarklins55/puteklis-api/actions/workflows/ci.yml)
+
 Portfolio project: Django/DRF admin + API for Puteklis music data, with sync to the static site files.
 
 Highlights:
