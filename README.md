@@ -1,5 +1,14 @@
 # puteklis-api
 
+Portfolio project: Django/DRF admin + API for Puteklis music data, with sync to the static site files.
+
+Highlights:
+- Admin panel for managing songs (Draft/Published)
+- Public API (published only) + health check
+- Sync to `songs.json`, `songs_data.js`, and `datori.html`
+- PostgreSQL local setup with index/EXPLAIN demo
+- GitHub Actions CI for automated tests on push/PR
+
 Local dev quickstart:
 
 ```bash
@@ -11,7 +20,8 @@ python -m venv .venv
 ```
 
 Admin: `http://127.0.0.1:8000/admin/`  
-API: `http://127.0.0.1:8000/api/songs/`
+API: `http://127.0.0.1:8000/api/songs/`  
+Health: `http://127.0.0.1:8000/api/health/`
 
 Environment:
 
