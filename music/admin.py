@@ -319,6 +319,9 @@ class SongAdmin(admin.ModelAdmin):
 
     def delete_model(self, request, obj):
         removed = _remove_song_from_json(obj)
-        message = "Dzēsts ieraksts no songs.json." if removed else "Ieraksts nav atrasts songs.json."
+        if removed:
+            message = "Dzēsts ieraksts no songs.json."
+        else:
+            message = "Ieraksts nav atrasts songs.json."
         _log_sync("delete", message, [])
         super().delete_model(request, obj)

@@ -2,10 +2,10 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-from django.utils import timezone
 from django.conf import settings
 from django.core.files import File
 from django.core.management.base import BaseCommand
+from django.utils import timezone
 
 from music.models import Song
 
@@ -67,7 +67,12 @@ class Command(BaseCommand):
 
             song = Song(title=title, style=style, status=status)
             self._attach_file(song.audio_file, source_root, audio_rel, name=audio_name)
-            self._attach_file(song.lyrics_file, source_root, lyrics_rel, warn_missing=False)
+            self._attach_file(
+                song.lyrics_file,
+                source_root,
+                lyrics_rel,
+                warn_missing=False,
+            )
             self._attach_file(song.cover_image, source_root, image_rel)
             created_at = self._get_audio_mtime(source_root, audio_rel)
             if created_at:
