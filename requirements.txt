@@ -4,3 +4,5 @@ Pillow>=10,<11
 psycopg>=3.3,<4
 python-dotenv>=1.0,<2
 gunicorn>=22,<24
+ruff>=0.6,<1
+black>=24.0,<25

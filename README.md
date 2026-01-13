@@ -8,6 +8,7 @@ Highlights:
 - Sync to `songs.json`, `songs_data.js`, and `datori.html`
 - PostgreSQL local setup with index/EXPLAIN demo
 - GitHub Actions CI for automated tests on push/PR
+- k3d mini-demo verified (health endpoint returns 200)
 
 Local dev quickstart:
 
