@@ -32,6 +32,7 @@ Docs:
 
 - Local ops runbook: `docs/local_ops.md`
 - Transactions and migrations: `docs/transactions_migrations.md`
+- Deployment outline (WSL2 demo): `docs/deployment_outline.md`
 
 PostgreSQL (local) setup:
 
