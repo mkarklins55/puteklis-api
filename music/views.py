@@ -31,4 +31,5 @@ class HealthView(APIView):
     def get(self, request):
         return Response({"status": "ok"})
 
+
 # Create your views here.

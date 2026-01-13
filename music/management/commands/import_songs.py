@@ -80,9 +80,7 @@ class Command(BaseCommand):
             song.save()
             created += 1
 
-        self.stdout.write(
-            f"Import complete. Created: {created}, Skipped: {skipped}"
-        )
+        self.stdout.write(f"Import complete. Created: {created}, Skipped: {skipped}")
 
     @staticmethod
     def _normalize_rel(value):
@@ -102,9 +100,7 @@ class Command(BaseCommand):
         source_path = source_root / rel_path
         if not source_path.exists():
             if warn_missing:
-                self.stdout.write(
-                    self.style.WARNING(f"Missing file: {source_path}")
-                )
+                self.stdout.write(self.style.WARNING(f"Missing file: {source_path}"))
             return
         with source_path.open("rb") as handle:
             field.save(name, File(handle), save=False)

@@ -89,8 +89,7 @@ def _sync_song_to_json(song, data=None):
                 item
                 for item in data
                 if not (
-                    item.get("title") == song.title
-                    and item.get("audio") == audio_rel
+                    item.get("title") == song.title and item.get("audio") == audio_rel
                 )
             ]
         if own_write:
@@ -112,10 +111,7 @@ def _sync_song_to_json(song, data=None):
     updated = 0
     matched = False
     for idx, item in enumerate(data):
-        if (
-            item.get("title") == entry["title"]
-            and item.get("audio") == entry["audio"]
-        ):
+        if item.get("title") == entry["title"] and item.get("audio") == entry["audio"]:
             matched = True
             if item != entry:
                 data[idx] = entry
@@ -170,10 +166,7 @@ def _remove_song_from_json(song):
     filtered = [
         item
         for item in data
-        if not (
-            item.get("title") == song.title
-            and item.get("audio") == audio_rel
-        )
+        if not (item.get("title") == song.title and item.get("audio") == audio_rel)
     ]
 
     if filtered == data:
@@ -213,10 +206,10 @@ def _get_audio_mtime(song, web_root):
 
 @admin.register(Song)
 class SongAdmin(admin.ModelAdmin):
-    list_display = ('title', 'status', 'published_at', 'created_at')
-    list_filter = ('status',)
-    search_fields = ('title', 'style')
-    actions = ['sync_selected']
+    list_display = ("title", "status", "published_at", "created_at")
+    list_filter = ("status",)
+    search_fields = ("title", "style")
+    actions = ["sync_selected"]
 
     def get_urls(self):
         urls = super().get_urls()
@@ -312,8 +305,7 @@ class SongAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
         _, added, updated, missing = _sync_song_to_json(obj)
         message = (
-            f"Saglabāts ieraksts. "
-            f"Pievienots: {added}, atjaunināts: {updated}."
+            f"Saglabāts ieraksts. " f"Pievienots: {added}, atjaunināts: {updated}."
         )
         _log_sync("save", message, missing)
 

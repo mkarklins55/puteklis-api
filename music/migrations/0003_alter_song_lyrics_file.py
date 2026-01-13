@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('music', '0002_song_unique_song_title_audio'),
+        ("music", "0002_song_unique_song_title_audio"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='song',
-            name='lyrics_file',
-            field=models.FileField(blank=True, upload_to='lyrics/'),
+            model_name="song",
+            name="lyrics_file",
+            field=models.FileField(blank=True, upload_to="lyrics/"),
         ),
     ]

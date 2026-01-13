@@ -7,57 +7,79 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('music', '0003_alter_song_lyrics_file'),
+        ("music", "0003_alter_song_lyrics_file"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='song',
-            options={'ordering': ['-published_at', '-created_at'], 'verbose_name': 'Dziesma', 'verbose_name_plural': 'Dziesmas'},
+            name="song",
+            options={
+                "ordering": ["-published_at", "-created_at"],
+                "verbose_name": "Dziesma",
+                "verbose_name_plural": "Dziesmas",
+            },
         ),
         migrations.AlterField(
-            model_name='song',
-            name='audio_file',
-            field=models.FileField(storage=music.storage.OverwriteStorage(), upload_to='music/', verbose_name='Audio fails'),
+            model_name="song",
+            name="audio_file",
+            field=models.FileField(
+                storage=music.storage.OverwriteStorage(),
+                upload_to="music/",
+                verbose_name="Audio fails",
+            ),
         ),
         migrations.AlterField(
-            model_name='song',
-            name='cover_image',
-            field=models.ImageField(storage=music.storage.OverwriteStorage(), upload_to='cover/', verbose_name='Vāka attēls'),
+            model_name="song",
+            name="cover_image",
+            field=models.ImageField(
+                storage=music.storage.OverwriteStorage(),
+                upload_to="cover/",
+                verbose_name="Vāka attēls",
+            ),
         ),
         migrations.AlterField(
-            model_name='song',
-            name='created_at',
-            field=models.DateTimeField(blank=True, null=True, verbose_name='Izveidots'),
+            model_name="song",
+            name="created_at",
+            field=models.DateTimeField(blank=True, null=True, verbose_name="Izveidots"),
         ),
         migrations.AlterField(
-            model_name='song',
-            name='lyrics_file',
-            field=models.FileField(blank=True, storage=music.storage.OverwriteStorage(), upload_to='lyrics/', verbose_name='Teksta fails'),
+            model_name="song",
+            name="lyrics_file",
+            field=models.FileField(
+                blank=True,
+                storage=music.storage.OverwriteStorage(),
+                upload_to="lyrics/",
+                verbose_name="Teksta fails",
+            ),
         ),
         migrations.AlterField(
-            model_name='song',
-            name='published_at',
-            field=models.DateField(blank=True, null=True, verbose_name='Publicēts'),
+            model_name="song",
+            name="published_at",
+            field=models.DateField(blank=True, null=True, verbose_name="Publicēts"),
         ),
         migrations.AlterField(
-            model_name='song',
-            name='status',
-            field=models.CharField(choices=[('draft', 'Draft'), ('published', 'Published')], default='draft', max_length=10, verbose_name='Statuss'),
+            model_name="song",
+            name="status",
+            field=models.CharField(
+                choices=[("draft", "Draft"), ("published", "Published")],
+                default="draft",
+                max_length=10,
+                verbose_name="Statuss",
+            ),
         ),
         migrations.AlterField(
-            model_name='song',
-            name='style',
-            field=models.TextField(blank=True, verbose_name='Stils'),
+            model_name="song",
+            name="style",
+            field=models.TextField(blank=True, verbose_name="Stils"),
         ),
         migrations.AlterField(
-            model_name='song',
-            name='title',
-            field=models.CharField(max_length=200, verbose_name='Nosaukums'),
+            model_name="song",
+            name="title",
+            field=models.CharField(max_length=200, verbose_name="Nosaukums"),
         ),
         migrations.AlterField(
-            model_name='song',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, verbose_name='Atjaunināts'),
+            model_name="song",
+            name="updated_at",
+            field=models.DateTimeField(auto_now=True, verbose_name="Atjaunināts"),
         ),
     ]

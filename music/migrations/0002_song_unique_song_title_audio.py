@@ -6,12 +6,14 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('music', '0001_initial'),
+        ("music", "0001_initial"),
     ]
 
     operations = [
         migrations.AddConstraint(
-            model_name='song',
-            constraint=models.UniqueConstraint(fields=('title', 'audio_file'), name='unique_song_title_audio'),
+            model_name="song",
+            constraint=models.UniqueConstraint(
+                fields=("title", "audio_file"), name="unique_song_title_audio"
+            ),
         ),
     ]
