@@ -1,0 +1,20 @@
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /app
+
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . /app
+
+ENV DJANGO_SECRET_KEY=change-me
+ENV DB_ENGINE=django.db.backends.sqlite3
+ENV DB_NAME=/tmp/db.sqlite3
+ENV DJANGO_ALLOWED_HOSTS=*
+
+EXPOSE 8000
+
+CMD ["sh", "-c", "python manage.py migrate && gunicorn --bind 0.0.0.0:8000 config.wsgi:application"]

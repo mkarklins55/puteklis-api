@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: puteklis-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: puteklis-api
+  template:
+    metadata:
+      labels:
+        app: puteklis-api
+    spec:
+      containers:
+        - name: app
+          image: puteklis-api:dev
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DJANGO_SECRET_KEY
+              value: "k8s-demo-only"
+            - name: DB_ENGINE
+              value: "django.db.backends.sqlite3"
+            - name: DB_NAME
+              value: "/tmp/db.sqlite3"
+            - name: DJANGO_ALLOWED_HOSTS
+              value: "*"

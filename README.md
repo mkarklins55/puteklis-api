@@ -33,6 +33,7 @@ Docs:
 - Local ops runbook: `docs/local_ops.md`
 - Transactions and migrations: `docs/transactions_migrations.md`
 - Deployment outline (WSL2 demo): `docs/deployment_outline.md`
+- Kubernetes mini-demo: `docs/k8s_demo.md`
 
 PostgreSQL (local) setup:
 
