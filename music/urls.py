@@ -3,7 +3,6 @@ from rest_framework.routers import DefaultRouter
 
 from .views import HealthView, SongViewSet
 
-
 router = DefaultRouter()
 router.register('songs', SongViewSet, basename='song')
 
