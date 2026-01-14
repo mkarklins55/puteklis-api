@@ -32,4 +32,20 @@ class HealthView(APIView):
         return Response({"status": "ok"})
 
 
+class MetricsView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request):
+        total = Song.objects.count()
+        published = Song.objects.filter(status=Song.STATUS_PUBLISHED).count()
+        draft = Song.objects.filter(status=Song.STATUS_DRAFT).count()
+        return Response(
+            {
+                "songs_total": total,
+                "songs_published": published,
+                "songs_draft": draft,
+            }
+        )
+
+
 # Create your views here.
