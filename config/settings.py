@@ -48,8 +48,19 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "drf_spectacular",
     "music.apps.MusicConfig",
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Puteklis API",
+    "DESCRIPTION": "API documentation for the Puteklis music admin and public API.",
+    "VERSION": "1.0.0",
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

@@ -26,6 +26,7 @@ python -m venv .venv
 Admin: `http://127.0.0.1:8000/admin/`  
 API: `http://127.0.0.1:8000/api/songs/`  
 Health: `http://127.0.0.1:8000/api/health/`
+Docs: `http://127.0.0.1:8000/api/docs/`
 
 Container image (GHCR):
 
