@@ -10,6 +10,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app
 
+RUN python manage.py collectstatic --noinput
+
 ENV DJANGO_SECRET_KEY=change-me
 ENV DB_ENGINE=django.db.backends.sqlite3
 ENV DB_NAME=/tmp/db.sqlite3
