@@ -64,6 +64,7 @@ Docs:
 - Deployment outline (WSL2 demo): `docs/deployment_outline.md`
 - Kubernetes mini-demo: `docs/k8s_demo.md`
 - Release checklist: `docs/release_checklist.md`
+- Docker + systemd (WSL): `docs/systemd_docker.md`
 
 PostgreSQL (local) setup:
 
