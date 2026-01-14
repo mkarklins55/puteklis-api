@@ -12,6 +12,8 @@ docker build -t puteklis-api:dev .
 curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
 k3d cluster create puteklis
 k3d image import puteklis-api:dev -c puteklis
+kubectl apply -f k8s/configmap.yaml
+kubectl apply -f k8s/secret.yaml
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
 kubectl port-forward svc/puteklis-api 8080:80
@@ -27,6 +29,8 @@ chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
 kind create cluster
 kind load docker-image puteklis-api:dev
+kubectl apply -f k8s/configmap.yaml
+kubectl apply -f k8s/secret.yaml
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
 kubectl port-forward svc/puteklis-api 8080:80

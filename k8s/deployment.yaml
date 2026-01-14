@@ -17,12 +17,8 @@ spec:
           image: puteklis-api:dev
           ports:
             - containerPort: 8000
-          env:
-            - name: DJANGO_SECRET_KEY
-              value: "k8s-demo-only"
-            - name: DB_ENGINE
-              value: "django.db.backends.sqlite3"
-            - name: DB_NAME
-              value: "/tmp/db.sqlite3"
-            - name: DJANGO_ALLOWED_HOSTS
-              value: "*"
+          envFrom:
+            - configMapRef:
+                name: puteklis-api-config
+            - secretRef:
+                name: puteklis-api-secret

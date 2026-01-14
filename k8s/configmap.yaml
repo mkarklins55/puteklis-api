@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: puteklis-api-config
+data:
+  DB_ENGINE: "django.db.backends.sqlite3"
+  DB_NAME: "/tmp/db.sqlite3"
+  DJANGO_ALLOWED_HOSTS: "*"
