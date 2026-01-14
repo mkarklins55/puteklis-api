@@ -3,6 +3,7 @@ name: Docker image (GHCR)
 on:
   push:
     branches: ["main"]
+    tags: ["v*"]
   workflow_dispatch:
 
 env:
@@ -36,6 +37,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=sha
+            type=ref,event=tag
             type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Build and push
