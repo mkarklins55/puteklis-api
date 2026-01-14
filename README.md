@@ -35,6 +35,21 @@ docker pull ghcr.io/mkarklins55/puteklis-api:latest
 docker run --rm -p 8000:8000 ghcr.io/mkarklins55/puteklis-api:latest
 ```
 
+Docker with PostgreSQL (WSL + Windows Postgres):
+
+```bash
+docker run --rm -p 8000:8000 \
+  -e DJANGO_SECRET_KEY='change-me' \
+  -e DJANGO_ALLOWED_HOSTS='localhost,127.0.0.1' \
+  -e DB_ENGINE='django.db.backends.postgresql' \
+  -e DB_NAME='puteklis_api' \
+  -e DB_USER='puteklis_user' \
+  -e DB_PASSWORD='replace-me' \
+  -e DB_HOST='host.docker.internal' \
+  -e DB_PORT='5432' \
+  ghcr.io/mkarklins55/puteklis-api:latest
+```
+
 Environment:
 
 - Copy `.env.example` to `.env` and set real values.
