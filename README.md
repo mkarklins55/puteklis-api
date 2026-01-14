@@ -59,9 +59,11 @@ Environment:
 Docs:
 
 - Local ops runbook: `docs/local_ops.md`
+- Runbook (local + GHCR): `docs/runbook.md`
 - Transactions and migrations: `docs/transactions_migrations.md`
 - Deployment outline (WSL2 demo): `docs/deployment_outline.md`
 - Kubernetes mini-demo: `docs/k8s_demo.md`
+- Release checklist: `docs/release_checklist.md`
 
 PostgreSQL (local) setup:
 
