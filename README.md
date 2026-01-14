@@ -11,6 +11,7 @@ Highlights:
 - PostgreSQL local setup with index/EXPLAIN demo
 - GitHub Actions CI for automated tests on push/PR
 - k3d mini-demo verified (health endpoint returns 200)
+- GHCR Docker image published on push to main
 
 Local dev quickstart:
 
@@ -25,6 +26,13 @@ python -m venv .venv
 Admin: `http://127.0.0.1:8000/admin/`  
 API: `http://127.0.0.1:8000/api/songs/`  
 Health: `http://127.0.0.1:8000/api/health/`
+
+Container image (GHCR):
+
+```bash
+docker pull ghcr.io/mkarklins55/puteklis-api:latest
+docker run --rm -p 8000:8000 ghcr.io/mkarklins55/puteklis-api:latest
+```
 
 Environment:
 
