@@ -10,13 +10,13 @@ docker build -t puteklis-api:dev .
 
 ```bash
 curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
-k3d cluster create puteklis
+k3d cluster create puteklis --api-port 6550 -p "8080:80@loadbalancer"
 k3d image import puteklis-api:dev -c puteklis
 kubectl apply -f k8s/configmap.yaml
 kubectl apply -f k8s/secret.yaml
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
-kubectl port-forward svc/puteklis-api 8080:80
+kubectl apply -f k8s/ingress.yaml
 ```
 
 Then open: `http://localhost:8080/api/health/`
