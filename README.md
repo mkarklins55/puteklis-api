@@ -63,6 +63,7 @@ Docs:
 - Transactions and migrations: `docs/transactions_migrations.md`
 - Deployment outline (WSL2 demo): `docs/deployment_outline.md`
 - Kubernetes mini-demo: `docs/k8s_demo.md`
+- Kubernetes rollout demo: `docs/k8s_rollout_demo.md`
 - Release checklist: `docs/release_checklist.md`
 - Docker + systemd (WSL): `docs/systemd_docker.md`
 
